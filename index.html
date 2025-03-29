@@ -1,0 +1,57 @@
+<!-- Sección del álbum con la foto y lista de temas -->
+<section class="album">
+    <h2>Álbum: "El Viaje"</h2>
+    <div class="album-info">
+        <img src="woman.webp" alt="Portada del álbum El Viaje" class="album-photo">
+        <ul class="temas">
+            <li><strong>1. Cinematic</strong> - 3:45</li>
+            <li><strong>2. Deep Space</strong> - 4:10</li>
+            <li><strong>3. Pop Fireworks</strong> - 3:50</li>
+            <li><strong>4. The Call</strong> - 3:50</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Reproductor de audio -->
+<audio id="player" controls autoplay>
+    <source id="audio-source" src="audios/cinematic.mp3" type="audio/mp3">
+    Tu navegador no soporta el audio.
+</audio>
+
+<!-- Nombre de la canción actual -->
+<p id="current-song">Reproduciendo: Cinematic</p>
+
+<script>
+    // Lista de canciones con sus nombres
+    const playlist = [
+        { src: "audios/cinematic.mp3", title: "Cinematic" },
+        { src: "audios/deep-space.mp3", title: "Deep Space" },
+        { src: "audios/pop-fireworks.mp3", title: "Pop Fireworks" },
+        { src: "audios/the-call.mp3", title: "The Call" }
+    ];
+
+    let currentTrack = 0; // Índice de la canción actual
+    const audioPlayer = document.getElementById("player");
+    const audioSource = document.getElementById("audio-source");
+    const songTitle = document.getElementById("current-song");
+
+    // Función para cambiar la canción
+    function changeTrack(index) {
+        if (index < playlist.length) {
+            audioSource.src = playlist[index].src;
+            audioPlayer.load(); // Carga la nueva canción
+            audioPlayer.play(); // Reproduce automáticamente
+            songTitle.textContent = "Reproduciendo: " + playlist[index].title;
+        } else {
+            currentTrack = 0; // Reinicia la playlist
+            changeTrack(currentTrack);
+        }
+    }
+
+    // Evento que detecta cuando la canción termina
+    audioPlayer.addEventListener("ended", () => {
+        currentTrack++;
+        changeTrack(currentTrack);
+    });
+
+</script>

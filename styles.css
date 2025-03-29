@@ -1,0 +1,87 @@
+
+/* Resetear estilos predeterminados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background-color: #2d3b55;
+    color: white;
+    padding: 20px;
+}
+
+.album-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.album-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.album-details table {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    border-collapse: collapse;
+    background: white;
+}
+
+.album-details th, .album-details td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.album-details th {
+    background-color: #2d3b55;
+    color: white;
+}
+
+.ubicacion iframe {
+    width: 90%;
+    max-width: 600px;
+    height: 400px;
+    margin-top: 10px;
+}
+
+.player-container {
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #222;
+    color: white;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+a {
+    text-decoration: none;
+    color: #ffcc00;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #2d3b55;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+}
+
